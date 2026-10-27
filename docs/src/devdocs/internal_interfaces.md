@@ -54,6 +54,7 @@ NonlinearSolveBase.AbstractDescentDirection
 NonlinearSolveBase.AbstractDescentCache
 NonlinearSolveBase.supports_line_search
 NonlinearSolveBase.supports_trust_region
+NonlinearSolveBase.supports_trust_region_scaling
 NonlinearSolveBase.set_du!
 NonlinearSolveBase.last_step_accepted
 NonlinearSolveBase.preinverted_jacobian
@@ -143,6 +144,17 @@ NonlinearSolveBase.trace_is_active
 
 ```@docs
 NonlinearSolveBase.initialization_alg
+```
+
+## Sensitivity Helpers
+
+Developer entry points used by SciMLSensitivity reverse-mode adjoints and by callers that
+already hold a concrete problem and must re-solve without re-running
+`get_concrete_problem`.
+
+```@docs
+NonlinearSolveBase.solve_call
+NonlinearSolveBase.nlls_solve_adjoint_dp
 ```
 
 ## Cache Tolerances

@@ -126,7 +126,8 @@ include("forward_diff.jl")
 @compat(
     public,
     (
-        InternalAPI, supports_line_search, supports_trust_region, set_du!,
+        InternalAPI, supports_line_search, supports_trust_region,
+        supports_trust_region_scaling, set_du!,
         AbstractDescentDirection,
     )
 )
@@ -170,6 +171,8 @@ export RelTerminationMode, AbsTerminationMode,
     NormTerminationMode, RelNormTerminationMode, AbsNormTerminationMode,
     RelNormSafeTerminationMode, AbsNormSafeTerminationMode,
     RelNormSafeBestTerminationMode, AbsNormSafeBestTerminationMode
+
+@compat(public, (RobustTrustRegionLinsolve,))
 
 export DescentResult, SteepestDescent, NewtonDescent, DampedNewtonDescent, Dogleg,
     GeodesicAcceleration, MoreTrustRegionDescent, TrustRegionSubproblem,
